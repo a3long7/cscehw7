@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Math Fun</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            font-size: 16px;
+            width: 200px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        Home
+    </header>
+
+    <main>
+        <h1>Welcome to Kids Math Fun</h1>
+        <section>
+            <h2>Sample</h2>
+            <p>Here's a simple math problem for you:</p>
+            <p>What is 2 + 3?</p>
+            <p>Answer: 5</p>
+        </section>
+
+        <section>
+            <h2>Exercise</h2>
+            <form id="mathForm">
+                <label for="userAnswer">What is 5 - 2?</label>
+                <input type="text" id="userAnswer" name="userAnswer" required>
+                <input type="submit" value="Check Answer">
+            </form>
+            <p id="result"></p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Kids Math Fun
+    </footer>
+
+    <script>
+        document.getElementById("mathForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var userAnswer = parseInt(document.getElementById("userAnswer").value);
+            if (userAnswer === 3) {
+                document.getElementById("result").innerText = "Correct!";
+            } else {
+                document.getElementById("result").innerText = "Incorrect. Try again!";
+            }
+        });
+    </script>
+</body>
+
+</html>
